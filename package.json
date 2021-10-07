@@ -1,27 +1,27 @@
 {
-  "name": "smhl_webgl_dev",
+  "name": "SMHL_WebGL_Dev",
   "version": "1.0.0",
-  "description": "Development version of SMHL",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC",
+  "description": "",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
     "got": "^11.8.2",
     "tape": "^5.3.1"
   },
   "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JPacana/SMHL_WebGL_Dev.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/JPacana/SMHL_WebGL_Dev/issues"
   },
-  "homepage": "https://github.com/JPacana/SMHL_WebGL_Dev#readme",
-  "keywords": []
+  "homepage": "https://github.com/JPacana/SMHL_WebGL_Dev#readme"
 }
