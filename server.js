@@ -12,5 +12,5 @@ app.get('/', (req, res) => {
 })
  
 http.createServer(app).listen(port, () => {
-    console.log('Server runnign on localhost:$(port)');
+    console.log(`Server running on localhost:${port}`);
 });
