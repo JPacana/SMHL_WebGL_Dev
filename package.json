@@ -7,5 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JPacana/SMHL_WebGL_Dev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JPacana/SMHL_WebGL_Dev/issues"
+  },
+  "homepage": "https://github.com/JPacana/SMHL_WebGL_Dev#readme"
 }
