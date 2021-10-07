@@ -1,16 +1,28 @@
-const express = require('express');
-const app = express();
-const http = require('http');
-const path = require('path');
+const { spawn } = require('child_process');
+const got = require('got');
+const test = require('tape');
 
-const port = 8000;
- 
-app.use(express.static(path.join(__dirname, '/')));
+// Start the app
+const env = Object.assign({}, process.env, {PORT: 5000});
+const child = spawn('node', ['index.js'], {env});
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, + '/index.html'));
-})
- 
-http.createServer(app).listen(port, () => {
-    console.log(`Server running on localhost:${port}`);
+test('responds to requests', (t) => {
+  t.plan(4);
+
+  // Wait until the server is ready
+  child.stdout.on('data', _ => {
+    // Make a request to our app
+    (async () => {
+      const response = await got('http://127.0.0.1:5000');
+      // stop the server
+      child.kill();
+      // No error
+      t.false(response.error);
+      // Successful response
+      t.equal(response.statusCode, 200);
+      // Assert content checks
+      t.notEqual(response.body.indexOf("<title>Node.js Getting Started on Heroku</title>"), -1);
+      t.notEqual(response.body.indexOf("Getting Started on Heroku with Node.js"), -1);
+    })();
+  });
 });
